@@ -4,6 +4,7 @@
 
 * Deep dive into Javascript
 * Introduction to TS
+* Node JS, npm, webpack
 * Introduction to Angular
 * Angular out-of-the-box directives
 * About angular components, inputs and outputs
