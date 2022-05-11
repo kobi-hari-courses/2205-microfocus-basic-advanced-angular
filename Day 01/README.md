@@ -10,6 +10,7 @@
 * We have seen the true meaning of the `new` and `this` keywords, and most specifically - that they do not have the same meaning as in Java.
 * We have experienced the problem of the missing `this` context
 * We learned about javascript scopes and **Closures**
+* We learned about the `prototype` object and property
 * We learned the difference between serverside javascript (**NodeJS**) and clientside web javascript
   * We talked about modularity and the `require` keyword
   * We talked about `webpack`  - a utility to pack "serverside" javascript files into one "web-ready" file
