@@ -17,5 +17,6 @@
 * Custom Directives and Pipes
 
 
-## Daily summaries
-* [Day 01 - Javascript](Day%2001/README.md)
+## Module summaries
+* [Module 01 - Javascript](Module%2001/README.md)
+* [Module 02 - Typescript](Module%2002/README.md)
