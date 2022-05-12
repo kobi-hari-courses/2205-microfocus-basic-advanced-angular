@@ -1,0 +1,17 @@
+{
+  "name": "fun-with-nodejs",
+  "version": "1.0.0",
+  "description": "just having fun with node js",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "fun"
+  ],
+  "author": "Kobi Hari",
+  "license": "ISC",
+  "dependencies": {
+    "mathjs": "^10.5.3"
+  }
+}
