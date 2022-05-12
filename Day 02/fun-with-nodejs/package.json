@@ -13,5 +13,8 @@
   "license": "ISC",
   "dependencies": {
     "mathjs": "^10.5.3"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.4"
   }
 }
