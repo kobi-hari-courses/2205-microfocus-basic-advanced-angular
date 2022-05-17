@@ -1,0 +1,10 @@
+<input #searchBox type="search" [disabled]="isBusy" 
+       (input)="setKeyword(searchBox.value)">
+<button [disabled]="isBusy" (click)="search()">Go</button>
+<img *ngIf="isBusy" src="assets/spinner.gif">
+<hr>
+<ul>
+    <li *ngFor="let res of results; let i = index">
+        {{i + 1}}: {{res}}
+    </li>
+</ul>
