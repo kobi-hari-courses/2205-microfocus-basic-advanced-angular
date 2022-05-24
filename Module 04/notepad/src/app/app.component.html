@@ -2,16 +2,35 @@
     <h1>Welcome to the amazing Notepad</h1>
 </div>
 <div class="colors-area">
-
+    <ul>
+        <li *ngFor="let item of colors"
+            (click)="selectColor(item)"
+            [class.chosen]="item === selectedColor"
+        >{{item}}</li>
+    </ul>
 </div>
 <div class="sizes-area">
-
+    <ul>
+        <li *ngFor="let item of sizes"
+            (click)="selectSize(item)"
+            [class.chosen]="item === selectedSize"
+        >{{item}}</li>
+    </ul>
 </div>
 <div class="fonts-area">
-
+    <ul>
+        <li *ngFor="let item of fonts"
+            (click)="selectFont(item)"
+            [class.chosen]="item === selectedFont"
+        >{{item}}</li>
+    </ul>
 </div>
 <div class="text-area">
-    <textarea></textarea>
+    <textarea 
+        [style.color]="selectedColor"
+        [style.font-size]="selectedSize"
+        [style.font-family]="selectedFont"
+    ></textarea>
 </div>
 
 

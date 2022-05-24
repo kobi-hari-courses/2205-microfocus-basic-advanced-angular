@@ -18,6 +18,7 @@ export class AppComponent {
   // actions
   selectColor(value: string) {
     this.selectedColor = value;
+    console.log(`The color ${value} was selected`);
   }
 
   selectSize(value: string) {
