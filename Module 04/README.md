@@ -1,11 +1,9 @@
-## Module 3 - Introduction to Angular
+## Module 4 - Angular Components
 
 ### Projects:
 |     |     |
 | --- | --- |
 | [nodepad](notepad/) | An angular application demonstrating more directives and custom components |
-
-## At the end of module 04 we will have:
 
 ### More Angular Directives
 * We used `class.x` to conditionally add the class `x` according to a boolean value
