@@ -26,3 +26,13 @@
 * We talked about several lifecycle hooks: 
     - `OnInit`
     - `OnDestroy`
+    - `AfterViewInit`
+    - `OnChanges`
+* We saw how to use the `OnChanges` hook to be notified when an input changes
+* We saw that we can also use the javascript properties syntax for the same purpose by implementing a `getter` and `setter` for the property
+* We saw the `@ViewChild` decorator and that we can use it to access a part of the view in our typescript code. 
+  * We saw a **BAD** example of how to change the state of a DOM element using the `@ViewChild` decorator. Later in the advanced course we will see other ways to use the `@ViewChild` decorator, ways that are far more *Best Practice*
+
+### Exercise
+* [The Exercise Presentation](https://www.dropbox.com/s/rkhx8ge3lj5um6t/Description.pptx?dl=0)
+* [The solutiom video (Hebrew)](https://www.dropbox.com/s/8ybqibl7geul9bm/Solution.mp4?dl=0)
