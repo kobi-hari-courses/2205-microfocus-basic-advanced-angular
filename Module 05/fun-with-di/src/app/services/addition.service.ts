@@ -1,12 +1,23 @@
+import { Injectable } from "@angular/core";
+import { HistoryService } from "./history.service";
+
+@Injectable()
 export class AdditionService {
     public readonly id: number;
 
-    constructor() {
+    constructor(
+        private history: HistoryService
+
+    ) {
         this.id = Math.floor(Math.random() * 10000000);
-        console.log(`a new AdditionService was created with the id: ${this.id}`);
+        this.history.audit(`a new AdditionService was created with the id: ${this.id}`);
     }
     add(op1: number, op2:number): number {
-        console.log(`now performing addition of ${op1} and ${op2}`);
+        this.history.audit(`addition service add: ${op1} and ${op2}`);
         return op1 + op2;
     }
 }
+
+
+// Stateless service
+// Statefull service - A service that has a mutateable state
