@@ -22,3 +22,4 @@
 * [Module 02 - Typescript](Module%2002/README.md)
 * [Module 03 - Introduction to Angular](Module%2003/README.md)
 * [Module 04 - Components in Angular](Module%2004/README.md)
+* [Module 05 - DI and Promises](Module%2005/README.md)
