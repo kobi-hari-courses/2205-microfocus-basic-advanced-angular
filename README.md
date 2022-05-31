@@ -23,3 +23,4 @@
 * [Module 03 - Introduction to Angular](Module%2003/README.md)
 * [Module 04 - Components in Angular](Module%2004/README.md)
 * [Module 05 - DI and Promises](Module%2005/README.md)
+* [Module 06 - Promises and RxJS](Module%2006/README.md)
