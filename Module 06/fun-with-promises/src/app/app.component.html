@@ -1,1 +1,5 @@
 <button (click)="go()">Go</button>
+
+<hr>
+<input type="number" #numberParam>
+<button (click)="userCompletedThePromise(numberParam.valueAsNumber)">Complete Promise</button>
