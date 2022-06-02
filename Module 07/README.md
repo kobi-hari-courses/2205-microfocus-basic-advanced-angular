@@ -32,7 +32,8 @@
     * [merge](https://rxjs-dev.firebaseapp.com/api/index/function/merge)
 * We created an example that uses observable to convert color search keyword into a list of matching results (colors)
 * We Understood that the `map` operator cannot be used when we apply an asyncronous function on each event because it creates an Observable of Promises
-* We saw how to use `mergeMap` and `switchMap` as asynchronous alternative for map when using async projections
+* We saw how to use `mergeAll` and `switchAll` to flatten the higher order observables.
+* We can also use shortcuts: 
     - `mergeMap(x => observable)` is actually short for `map(x => observable), mergeAll()`
     - `switchMap(x => observable)` is actually short for `map(x => observable), switchAll()`
 * We understood the difference between [mergeMap](https://rxjs-dev.firebaseapp.com/api/operators/mergeMap) and [switchMap](https://rxjs-dev.firebaseapp.com/api/operators/switchMap)
