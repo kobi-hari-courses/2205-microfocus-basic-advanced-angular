@@ -1,0 +1,12 @@
+input {
+    font-size: 30px;
+}
+
+img {
+    height: 45px;
+}
+
+.toolbar {
+    display: flex;
+    flex-direction: row;
+}

@@ -1,0 +1,10 @@
+<div class="toolbar">
+  <input type="search" #keyword (input)="search$.next(keyword.value)">
+  <img *ngIf="isBusy$ | async"  src="assets/spinner.gif">  
+</div>
+<div class="results">
+  <div *ngFor="let record of (results$ | async)"
+    [style.background]="record.code"
+  >{{record.name}}</div>
+
+</div>
