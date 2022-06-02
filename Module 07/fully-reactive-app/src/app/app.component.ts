@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'fully-reactive-app';
+  isShowingReader = true;
+
+  toggleReader() {
+    this.isShowingReader = !this.isShowingReader;
+  }
 }
