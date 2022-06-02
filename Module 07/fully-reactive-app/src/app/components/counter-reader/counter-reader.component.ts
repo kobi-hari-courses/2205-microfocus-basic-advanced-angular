@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { CounterService } from 'src/app/services/counter.service';
 
 @Component({
@@ -6,15 +7,23 @@ import { CounterService } from 'src/app/services/counter.service';
   templateUrl: './counter-reader.component.html',
   styleUrls: ['./counter-reader.component.css']
 })
-export class CounterReaderComponent implements OnInit {
+export class CounterReaderComponent implements OnInit, OnDestroy {
   value: number | undefined = undefined;
+  sub = new Subscription();
 
   constructor(private counterService: CounterService) { }
 
   ngOnInit(): void {
-    this.counterService
+    this.sub.add(this.counterService
         .getValue()
-        .subscribe(val => this.value = val);
+        .subscribe(val => {
+          this.value = val;
+          console.log('counter value changed to ' + val);
+        }));
+  }
+
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();    
   }
 
 }
