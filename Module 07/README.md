@@ -37,3 +37,9 @@
     - `mergeMap(x => observable)` is actually short for `map(x => observable), mergeAll()`
     - `switchMap(x => observable)` is actually short for `map(x => observable), switchAll()`
 * We understood the difference between [mergeMap](https://rxjs-dev.firebaseapp.com/api/operators/mergeMap) and [switchMap](https://rxjs-dev.firebaseapp.com/api/operators/switchMap)
+
+
+### Exercise
+Convert the `PopQuiz` application to be fully reactive. You can use the video in the link for assistance.
+* [Presentation](https://www.dropbox.com/s/n9pawcvycxv03sx/Description.pptx?dl=0)
+* [Helper Video](https://www.dropbox.com/s/eba2hohp9z7fzkh/Solution.mp4?dl=0)
