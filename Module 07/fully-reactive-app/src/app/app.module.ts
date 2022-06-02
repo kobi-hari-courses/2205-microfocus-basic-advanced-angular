@@ -4,12 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { CounterReaderComponent } from './components/counter-reader/counter-reader.component';
 import { CounterWriterComponent } from './components/counter-writer/counter-writer.component';
+import { CounterContainerComponent } from './components/counter-container/counter-container.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CounterReaderComponent,
-    CounterWriterComponent
+    CounterWriterComponent,
+    CounterContainerComponent
   ],
   imports: [
     BrowserModule
