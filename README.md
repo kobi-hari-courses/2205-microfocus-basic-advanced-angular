@@ -24,3 +24,5 @@
 * [Module 04 - Components in Angular](Module%2004/README.md)
 * [Module 05 - DI and Promises](Module%2005/README.md)
 * [Module 06 - Promises and RxJS](Module%2006/README.md)
+* [Module 07 - RxJS Operators](Module%2007/README.md)
+* [Module 08 - Routing](Module%2008/README.md)
