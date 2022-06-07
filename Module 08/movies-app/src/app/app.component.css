@@ -1,0 +1,21 @@
+:host {
+    display: grid; 
+    grid-template-rows: auto auto 1fr;   
+}
+
+nav {
+    display: flex;
+    background-color: rgb(202, 246, 202);
+}
+
+nav>a {
+    padding: 6px;
+    outline: 0px transparent;
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+}
+
+nav>a.current {
+    background-color: lightgreen;
+}
