@@ -1,1 +1,8 @@
-<p>movies-list works!</p>
+<ul>
+    <li *ngFor="let caption of (captions$ | async); let i = index"
+        (click)="onSelectMovie(i)"
+    >
+
+        {{caption}}
+    </li>
+</ul>

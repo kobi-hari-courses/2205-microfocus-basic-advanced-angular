@@ -1,0 +1,19 @@
+:host {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;    
+}
+
+li {
+    list-style: none;
+    cursor: pointer;
+}
+
+li:hover {
+    background-color: lightgreen;
+}
