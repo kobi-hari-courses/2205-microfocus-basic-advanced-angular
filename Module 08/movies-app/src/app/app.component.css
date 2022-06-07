@@ -5,7 +5,10 @@
 
 nav {
     display: flex;
+    align-items: center;
     background-color: rgb(202, 246, 202);
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 nav>a {
@@ -18,4 +21,12 @@ nav>a {
 
 nav>a.current {
     background-color: lightgreen;
+}
+
+.seperator {
+    flex: 1;
+}
+
+.user {
+    font-size: 0.8em;
 }

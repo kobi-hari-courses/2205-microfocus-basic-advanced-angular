@@ -1,6 +1,7 @@
 
 <nav>
     <button (click)="goPrev()">Prev</button>
+    <button (click)="goEdit()">Edit...</button>
     <button (click)="goNext()">Next</button>
 </nav>
 <div *ngIf="movie$ | async as movie" class="movie-details">

@@ -1,1 +1,5 @@
-<p>movie-edit works!</p>
+<div *ngIf="movie$ | async as movie">
+    <h1>Edit {{movie.caption}}</h1>
+    <textarea [value]="movie.description"></textarea>
+</div>
+

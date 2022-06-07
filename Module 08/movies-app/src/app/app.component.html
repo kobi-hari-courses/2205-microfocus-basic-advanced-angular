@@ -2,6 +2,12 @@
   <a routerLinkActive="current" routerLink="home">Home</a>
   <a routerLinkActive="current" routerLink="movies">Movies</a>
   <a routerLinkActive="current" routerLink="account">Account</a>
+
+  <div class="seperator"></div>
+  <div class="user">
+    {{user$ | async}}
+  </div>
+
 </nav>
 
 <router-outlet></router-outlet>

@@ -1,1 +1,2 @@
-<p>account works!</p>
+<button *ngIf="!(authStatus$ | async)" (click)="signIn()">Sign In</button>
+<button *ngIf="(authStatus$ | async)" (click)="signOut()">Sign Out</button>

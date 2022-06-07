@@ -19,7 +19,7 @@ export class MovieDetailsComponent implements OnInit {
     private router: Router
   ) { }
 
-  async ngOnInit() {
+  ngOnInit() {
     let index$ = this.route.params.pipe(
       map(prms => Number(prms['movieNumber']) )
     );
@@ -30,14 +30,19 @@ export class MovieDetailsComponent implements OnInit {
     )
   }
 
-  async goNext() {
+  goNext() {
     let index = Number(this.route.snapshot.params['movieNumber']);
     this.router.navigate(['movies', index + 1]);
   }
 
-  async goPrev() {
+  goPrev() {
     let index = Number(this.route.snapshot.params['movieNumber']);
     this.router.navigate(['movies', index - 1]);
   }
+
+  goEdit() {
+    let index = Number(this.route.snapshot.params['movieNumber']);
+    this.router.navigate(['movies', index, 'edit']);
+  } 
 
 }
