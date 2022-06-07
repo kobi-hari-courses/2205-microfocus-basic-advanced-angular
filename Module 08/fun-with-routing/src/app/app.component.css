@@ -1,0 +1,17 @@
+nav {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid darkgray;
+    padding: 0px;
+}
+
+nav a {
+    padding: 5px;
+    background: lightgray;
+    text-decoration: none;
+    color: black;
+}
+
+nav a.current-page {
+    background: darkgray;
+}
