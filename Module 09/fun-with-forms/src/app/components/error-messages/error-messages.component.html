@@ -1,0 +1,12 @@
+<div *ngIf="ctrl?.errors as errors" class="errors-summary">
+  <div *ngIf="errors['required'] as err">Required</div>
+  <div *ngIf="errors['minlength'] as err">
+    Length: {{ err.actualLength }} / {{ err.requiredLength }}
+  </div>
+  <div *ngIf="errors['lowercase'] as err">Lowercase letter only</div>
+  <div *ngIf="errors['email'] as err">Email format expected</div>
+  <div *ngIf="errors['userAvailable'] as err">Username is already taken</div>
+  <div *ngIf="errors['minWords'] as err">
+    Words: {{ err.actual }} / {{ err.expected }}
+  </div>
+</div>

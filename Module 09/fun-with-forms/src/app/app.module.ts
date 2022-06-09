@@ -3,10 +3,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { ErrorMessagesComponent } from './components/error-messages/error-messages.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ErrorMessagesComponent
   ],
   imports: [
     BrowserModule, 

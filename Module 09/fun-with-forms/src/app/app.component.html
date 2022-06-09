@@ -1,44 +1,50 @@
 <div [formGroup]="form">
-  <div class="field">
+  <div class="field" *ngIf="getControl('username') as ctrl">
     <label>Username:</label>
     <input type="text" formControlName="username">
+    <app-error-messages [ctrl]="ctrl"></app-error-messages>
   </div>
 
-  <div class="field">
+  <div class="field" *ngIf="getControl('email') as ctrl">
     <label>Email:</label>
     <input type="text" formControlName="email">
+    <app-error-messages [ctrl]="ctrl"></app-error-messages>
   </div>
 
-  <div class="field">
+  <div class="field" *ngIf="getControl('fullName') as ctrl">
     <label>Full Name:</label>
     <input type="text" formControlName="fullName">
+    <app-error-messages [ctrl]="ctrl"></app-error-messages>
   </div>
 
-  <div class="field">
+  <div class="field" *ngIf="getControl('description') as ctrl">
     <label>Description:</label>
     <textarea formControlName="description"></textarea>
+    <app-error-messages [ctrl]="ctrl"></app-error-messages>
   </div>
 
   <div formGroupName="address">
-    <div class="field">
+    <div class="field" *ngIf="getControl('street') as ctrl">
       <label>Street:</label>
       <input type="text" formControlName="street">
+      <app-error-messages [ctrl]="ctrl"></app-error-messages>
     </div>
 
-    <div class="field">
+    <div class="field" *ngIf="getControl('city') as ctrl">
       <label>City:</label>
       <select  formControlName="city">
         <option value="haifa">Haifa</option>
         <option value="telaviv">Tel Aviv</option>
         <option value="jerusalem">Jerusalem</option>
       </select>
+      <app-error-messages [ctrl]="ctrl"></app-error-messages>
     </div>
   
   </div>
   
 </div>
 
-<button [disabled]="form.invalid">Submit</button>
+<button [disabled]="!form.valid">Submit</button>
 
 
 <pre>
@@ -46,5 +52,5 @@
 
   form valid: {{ form.valid }}
 
-  username errors: {{ getControl('description').errors | json }}
+  username errors: {{ getControl('username').errors | json }}
 </pre>

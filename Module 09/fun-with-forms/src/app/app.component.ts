@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { combineLatest } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { CustomValidators } from './core/custom-validators';
+import { UsersService } from './service/users.service';
 
 @Component({
   selector: 'app-root',
@@ -10,9 +11,13 @@ import { CustomValidators } from './core/custom-validators';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  constructor(private usersService: UsersService){}
 
   form = new FormGroup({
-    username: new FormControl('', [Validators.required, CustomValidators.lowercase, Validators.minLength(5)]), 
+    username: new FormControl('', 
+      [Validators.required, CustomValidators.lowercase, Validators.minLength(5)],
+      [ctrl => this.usersService.validateUser(ctrl)]
+      ), 
     email: new FormControl('', Validators.email), 
     fullName: new FormControl('', [Validators.required]), 
     description: new FormControl('', [Validators.minLength(20), Validators.required, CustomValidators.minWords(5)]), 
