@@ -1,0 +1,15 @@
+<input type="text" [formControl]="username">
+
+
+<pre>
+  value: {{username.value}}
+  valid: {{username.valid}}
+  touched: {{username.touched}}
+  dirty: {{username.dirty}}
+  errors: {{username.errors | json}}
+
+  value$: {{usernameValue$ | async }}
+  status$: {{usernameValid$ | async }}
+  both$: {{both$ | async | json}}
+  validUsernames$: {{validUsernames$ | async }}
+</pre>
