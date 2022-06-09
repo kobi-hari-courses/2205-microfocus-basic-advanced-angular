@@ -1,15 +1,48 @@
-<input type="text" [formControl]="username">
+<div [formGroup]="form">
+  <div class="field">
+    <label>Username:</label>
+    <input type="text" formControlName="username">
+  </div>
+
+  <div class="field">
+    <label>Email:</label>
+    <input type="text" formControlName="email">
+  </div>
+
+  <div class="field">
+    <label>Full Name:</label>
+    <input type="text" formControlName="fullName">
+  </div>
+
+  <div class="field">
+    <label>Description:</label>
+    <textarea formControlName="description"></textarea>
+  </div>
+
+  <div formGroupName="address">
+    <div class="field">
+      <label>Street:</label>
+      <input type="text" formControlName="street">
+    </div>
+
+    <div class="field">
+      <label>City:</label>
+      <select  formControlName="city">
+        <option value="haifa">Haifa</option>
+        <option value="telaviv">Tel Aviv</option>
+        <option value="jerusalem">Jerusalem</option>
+      </select>
+    </div>
+  
+  </div>
+  
+</div>
+
+<button [disabled]="form.invalid">Submit</button>
 
 
 <pre>
-  value: {{username.value}}
-  valid: {{username.valid}}
-  touched: {{username.touched}}
-  dirty: {{username.dirty}}
-  errors: {{username.errors | json}}
+  form value: {{ form.value | json }}
 
-  value$: {{usernameValue$ | async }}
-  status$: {{usernameValid$ | async }}
-  both$: {{both$ | async | json}}
-  validUsernames$: {{validUsernames$ | async }}
+  form valid: {{ form.valid }}
 </pre>
