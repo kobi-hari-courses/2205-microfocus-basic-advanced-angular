@@ -26,3 +26,4 @@
 * [Module 06 - Promises and RxJS](Module%2006/README.md)
 * [Module 07 - RxJS Operators](Module%2007/README.md)
 * [Module 08 - Routing](Module%2008/README.md)
+* [Module 09 - Reactive Forms](Module%2009/README.md)
