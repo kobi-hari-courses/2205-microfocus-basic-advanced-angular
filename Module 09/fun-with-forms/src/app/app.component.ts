@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { combineLatest } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
+import { CustomValidators } from './core/custom-validators';
 
 @Component({
   selector: 'app-root',
@@ -11,10 +12,10 @@ import { filter, map } from 'rxjs/operators';
 export class AppComponent implements OnInit {
 
   form = new FormGroup({
-    username: new FormControl('', [Validators.required]), 
+    username: new FormControl('', [Validators.required, CustomValidators.lowercase, Validators.minLength(5)]), 
     email: new FormControl('', Validators.email), 
     fullName: new FormControl('', [Validators.required]), 
-    description: new FormControl('', [Validators.minLength(10), Validators.required]), 
+    description: new FormControl('', [Validators.minLength(20), Validators.required, CustomValidators.minWords(5)]), 
     address: new FormGroup({
       street: new FormControl('', [Validators.required]), 
       city: new FormControl('', [Validators.required])

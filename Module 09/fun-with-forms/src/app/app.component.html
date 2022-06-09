@@ -45,4 +45,6 @@
   form value: {{ form.value | json }}
 
   form valid: {{ form.valid }}
+
+  username errors: {{ getControl('description').errors | json }}
 </pre>
