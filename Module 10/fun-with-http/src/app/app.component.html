@@ -1,0 +1,9 @@
+<input #inputId type="number">
+<button (click)="getMovie(inputId.valueAsNumber)">Get Movie</button>
+<hr>
+
+<div *ngIf="movie">
+  <pre>
+    {{movie | json}}
+  </pre>
+</div>

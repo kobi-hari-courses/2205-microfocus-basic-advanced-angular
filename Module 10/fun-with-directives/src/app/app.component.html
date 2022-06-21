@@ -1,14 +1,36 @@
-<h1>Hello World</h1>
-<h2 highlight>The title is {{title}}</h2>
+<h1 underline>Hello World</h1>
+<h2 highlight (vanished)="whenH2HighlightVanshes($event)">The title is {{title}}</h2>
 
-<h3>Today we will talk about directives</h3>
-<h4 >Here are our topics for today</h4>
+<h3 underline="blue" title="bla bla" aria-details="this is a header">Today we will talk about directives</h3>
+
+<div class="ball-container">
+  <h4 #coords="mouseCoordinates" followMouse highlight="lightblue">Here are our topics for today</h4>
+  <div class="ball" [style.top]="coords.y" [style.left]="coords.x"></div>
+</div>
+
+
+
+<div>
+  the mouse is in: {{coords.x}}, {{coords.y}}
+</div>
+
+
+
 <ul>
-  <li highlight>How to create directives</li>
+  <li highlight="pink">How to create directives</li>
   <li>Use the Renderer</li>
-  <li>Use Host Binding</li>
+  <li highlight="yellow" underline="green">Use Host Binding</li>
   <li>Use Host Listener</li>
   <li highlight>Inputs</li>
-  <li>Outputs</li>
+  <li #myHighlightRef="hl" highlight="lime">Outputs</li>
 </ul>
+
+
+<input #ourInput type="text">
+<button (click)="theSpan.innerText = ourInput.value">Click me</button>
+<h1>Our text is <span #theSpan></span></h1>
+
+<h1>Highlight was clicked: {{myHighlightRef.wasClicked}}</h1>
+
+
 

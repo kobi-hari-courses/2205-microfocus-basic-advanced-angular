@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'fun-with-directives';
+
+
+  whenH2HighlightVanshes(color: string) {
+    console.log('The highlight of h2 vanished, its color was ' + color);
+  } 
+
 }

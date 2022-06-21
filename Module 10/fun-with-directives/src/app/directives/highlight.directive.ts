@@ -1,16 +1,44 @@
-import { Directive, ElementRef, HostBinding, HostListener, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, EventEmitter, HostBinding, HostListener, Input, OnInit, Output, Renderer2 } from '@angular/core';
 
 @Directive({
-  selector: '[highlight]'
+  selector: '[highlight]', 
+  exportAs: 'hl'
 })
-export class HighlightDirective {
+export class HighlightDirective implements OnInit {
+  public wasClicked = false;
+
+
+  @Input('highlight')
+  color = 'yellow';
+
+
+  @Output()
+  vanished = new EventEmitter<string>();
+
+
+  @HostBinding('style.transition')
+  transition = '1s';
+
+
+
   @HostBinding('style.background-color')
-  ourColor = 'cyan';
+  ourColor = 'yellow';
 
 
   @HostListener('click')
   whenTheUserClicks() {
-    this.ourColor = 'rgba(0, 255, 255, 0.15)';
+    if (!this.wasClicked) {
+      this.wasClicked = true;
+      const highlightColor = this.ourColor;
+      setTimeout(() => {
+        this.ourColor = 'transparent';
+      }, 2000);
+
+      setTimeout(() => {
+        this.vanished.emit(highlightColor);
+      }, 3000);
+    }
+
   }
 
 
@@ -23,6 +51,13 @@ export class HighlightDirective {
 
     // renderer.setStyle(elem.nativeElement, 'background-color', 'pink');
 
+  }
+
+  ngOnInit(): void {
+    console.log(`Highlight directive, color = "${this.color}" (${typeof(this.color)})`);
+
+    this.ourColor = this.color ? this.color : 'yellow';
+    
   }
 
 }

@@ -1,0 +1,16 @@
+.ball {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background-color: red;
+    border-radius: 50%;
+    border: 2px solid brown;
+    top: 0px;
+    left: 0px;
+    pointer-events: none;
+}
+
+.ball-container {
+    position: relative;
+}
+
