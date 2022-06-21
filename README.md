@@ -27,3 +27,4 @@
 * [Module 07 - RxJS Operators](Module%2007/README.md)
 * [Module 08 - Routing](Module%2008/README.md)
 * [Module 09 - Reactive Forms](Module%2009/README.md)
+* [Module 10 - Directives and Http](Module%2010/README.md)
