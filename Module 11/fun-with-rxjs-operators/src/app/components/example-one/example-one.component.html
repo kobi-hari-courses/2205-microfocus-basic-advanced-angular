@@ -1,0 +1,16 @@
+<input type="number" #numberBox>
+<button (click)="userNumbers$.next(numberBox.valueAsNumber)">Next</button>
+
+
+<hr>
+
+userNumbers$: {{userNumbers$ | async}}
+
+<hr>
+
+bufferCount$: {{buffered$ | async}}
+
+
+<hr>
+
+reductions$: {{reductions$ | async}}
