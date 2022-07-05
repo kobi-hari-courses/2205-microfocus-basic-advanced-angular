@@ -16,6 +16,26 @@
 * Forms in Angular
 * Custom Directives and Pipes
 
+## Advanced Course Agenda
+* RxJS Deeper dive: Combinators, Aggregators, Higher degree observables, Multicasting
+* Dependency Injection Deep Dive
+  * Providers
+  * Multi injection
+  * App initialization scenarios
+* Redux using NgRX
+* Advanced Component Authoring
+  * Content Projection
+  * View Children
+  * Content Children
+* Containers and Templates
+  * The `ng-container`
+  * The `ng-template`
+  * Template Outlets
+  * Contexts
+* Custom Structural directives
+  * Using ViewContainerRef
+  * Using the micro syntax
+
 
 ## Module summaries
 * [Module 01 - Javascript](Module%2001/README.md)
@@ -28,3 +48,6 @@
 * [Module 08 - Routing](Module%2008/README.md)
 * [Module 09 - Reactive Forms](Module%2009/README.md)
 * [Module 10 - Directives and Http](Module%2010/README.md)
+
+## Advanced Modules
+* [Module 11 - Rxjs Combinators and Aggregators](Module%2011/README.md)
