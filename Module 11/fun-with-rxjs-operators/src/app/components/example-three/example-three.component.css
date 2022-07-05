@@ -1,0 +1,60 @@
+:host {
+    display: flex;
+    flex-direction: row;
+}
+
+.words {
+    display: flex;
+    flex-direction: column;
+}
+
+.steps {
+    display: flex;
+    flex-direction: column;
+}
+
+div.item {
+    border: 1px solid lightgray;
+    margin: 3px;
+    padding: 3px;
+    cursor: pointer;
+}
+
+div.item:hover {
+    background-color: rgba(211, 211, 211, 0.527);
+}
+
+div.item.selected {
+    background-color: lightgreen;
+}
+
+.result {
+    min-width: 200px;
+    min-height: 200px;
+    border: 1px solid lightgray;
+    font-size: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.field {
+    position: absolute;
+    top: 200px;
+    left: 200px;
+    width: 400px;
+    height: 400px;
+    background-color: rgba(173, 216, 230, 0.238);
+}
+
+.ball {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: blue;
+    border-radius: 50%;
+    top: 200px;
+    left: 200px;
+    transition: 0.5s;
+}

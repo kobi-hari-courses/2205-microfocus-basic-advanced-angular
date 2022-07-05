@@ -1,0 +1,23 @@
+<div class="directions">
+    <div class="item" *ngFor="let direction of directions"
+        [class.selected]="direction === (selectedDirection$ | async)"
+        (click)="selectedDirection$.next(direction)"
+    >{{direction}}</div>
+</div>
+
+<div class="steps">
+    <button *ngFor="let step of steps"
+        (click)="nextStep$.next(step)"
+    >{{step.name}}</button>
+</div>
+
+<div>
+    <h1>Next position change: {{nextPositionChange$ | async | json}}</h1>
+    <h1>Current Position: {{position$ | async | json}}</h1>
+</div>
+
+<div class="field">
+    <div class="ball" *ngIf="position$ | async as position"
+    [style.transform]="'translate(' + (position.x * 10) + 'px, ' + (position.y * 10) + 'px)'"
+    ></div>
+</div>

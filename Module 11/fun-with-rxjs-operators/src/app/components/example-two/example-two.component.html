@@ -1,0 +1,17 @@
+<div class="words">
+    <div class="item" *ngFor="let word of words"
+        [class.selected]="word === (selectedWord$ | async)"
+        (click)="selectedWord$.next(word)"
+    >{{word}}</div>
+</div>
+
+<div class="manipulators">
+    <div class="item" *ngFor="let manipulatr of manipulators"
+        [class.selected]="manipulatr === (selectedManipulator$ | async)"
+        (click)="selectedManipulator$.next(manipulatr)"
+    >{{manipulatr.name}}</div>
+</div>
+
+<div class="result">
+    {{result$ | async}}
+</div>
