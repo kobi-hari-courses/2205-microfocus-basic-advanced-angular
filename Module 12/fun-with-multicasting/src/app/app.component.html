@@ -1,0 +1,4 @@
+<div *ngFor="let val of toggles; let index = index">
+    <button (click)="toggle(index)">Toggle</button>
+    <app-observer *ngIf="val"></app-observer>
+</div>
