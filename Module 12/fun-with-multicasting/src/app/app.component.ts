@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from './services/data.service';
 
 @Component({
   selector: 'app-root',
@@ -11,4 +12,6 @@ export class AppComponent {
   toggle(index: number) {
     this.toggles[index] = !this.toggles[index];
   }
+
+  constructor(private dataService: DataService){}
 }
