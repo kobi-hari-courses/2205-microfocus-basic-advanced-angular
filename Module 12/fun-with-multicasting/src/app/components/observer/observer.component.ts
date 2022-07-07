@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { DataService } from 'src/app/services/data.service';
+import { Data2Service } from 'src/app/services/data2.service';
 
 @Component({
   selector: 'app-observer',
@@ -12,7 +13,7 @@ export class ObserverComponent implements OnInit, OnDestroy {
 
   subscription!: Subscription;
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: Data2Service) { }
 
   ngOnInit(): void {
     this.subscription = this.dataService.getData().subscribe({
