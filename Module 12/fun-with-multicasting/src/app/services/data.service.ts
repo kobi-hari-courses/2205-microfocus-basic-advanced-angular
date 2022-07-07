@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { multicast, interval, map, take, Observable, timer, tap, Subject, BehaviorSubject, ReplaySubject, ConnectableObservable, refCount } from 'rxjs';
+import { share, multicast, publish, interval, map, take, Observable, timer, tap, Subject, BehaviorSubject, ReplaySubject, ConnectableObservable, refCount, publishBehavior, publishReplay, shareReplay, Subscription } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +18,8 @@ export class DataService {
       map(_ => 42), 
       );
 
+    const valueSource$ = timer(3000).pipe(map(_ => Math.ceil(Math.random() * 100)));
+
     const interval$ = interval(3000).pipe(
       map(val => 10 + val), take(10), 
       tap({
@@ -25,17 +27,24 @@ export class DataService {
         complete: () => console.log('complete'), 
         error: err => console.log('error ' + err)
       }), 
-      multicast(new ReplaySubject(3)
-        
-      //   () => {
-      //   console.log('We are generating a new subject');
-      //   return new ReplaySubject<number>(3);
-      // }      
-      ), 
-      refCount()
+      shareReplay({
+        bufferSize: 3, 
+        refCount: false
+      })
       );
 
-      this.dataSource$ = interval$;
+      const cachedRandom$ = valueSource$.pipe(
+        multicast(() => new ReplaySubject(1))
+      ) as ConnectableObservable<number>;
+
+      let latestConnection: Subscription = new Subscription();
+
+      interval(10000).subscribe(_ => {
+        latestConnection.unsubscribe();
+        latestConnection = cachedRandom$.connect();
+      })
+
+      this.dataSource$ = cachedRandom$;
 
 
   }
@@ -52,6 +61,27 @@ export class DataService {
 2. When completed, Behavior subject only sends "complete" without the latest value, if we subscribe too late.
    Replay subject, replays the latest value
 
+  publish() ====> multicast(new Subject());
+  publishBehavior(-1) ====> multicast(new BehaviorSubject(-1));
+  publishReplay(3) ====> mulitcast(new ReplaySubject(3));
+
+  share() ====> multicast(() => new Subject());
+  shareReplay(3) ====> shareReplay({refCount: false}) ====> multicast(new ReplaySubject(3), refcount*())
+  shareReplay({refCount: true, bufferSize: 3}) =====> mulitcast(() => new ReplaySubject(3), refcount)
+    but if the replay subject receives "complete" it will never recreate a new subject, and instead replay that same values received, along with the complete
+
+  if you have scenario, where you are fetching constant data from the web, use shareReplay(1)
+
+
+  [Cold source] [multicast(() => replaySubject(1))]
+
+  })
+
+
+
+  refcount* is counting references to connect, but it never disconnects
 
 */
+
+
 
