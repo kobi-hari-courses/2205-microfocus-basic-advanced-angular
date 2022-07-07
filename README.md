@@ -51,3 +51,6 @@
 
 ## Advanced Modules
 * [Module 11 - Rxjs Combinators and Aggregators](Module%2011/README.md)
+* [Module 12 - Rxjs Multicating](Module%2012/README.md)
+
+
