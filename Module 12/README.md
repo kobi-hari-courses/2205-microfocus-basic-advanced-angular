@@ -1,4 +1,9 @@
 # Module 12 - Multicast, Publish and Share in Angular
+### Projects:
+|     |     |
+| --- | --- |
+| [fun-with-multicasting](./fun-with-multicasting/) | RxJS multicasting operators: multicast, publish and share |
+
 
 ### About the `tap` operator
 * Allows side effects

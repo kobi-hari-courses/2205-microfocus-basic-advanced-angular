@@ -1,5 +1,11 @@
 # Module 11 - Combinators and Aggregators in rxjs
 
+### Projects:
+|     |     |
+| --- | --- |
+| [fun-with-rxjs-operators](./fun-with-rxjs-operators/) | RxJS Combinators, Inflators, Flatteners, and Aggregators |
+
+
 ### Inflators
 * Some operators change a flat observable into a second order observable: an observable of other wrappers.
 * The following is a list of second order observables:
