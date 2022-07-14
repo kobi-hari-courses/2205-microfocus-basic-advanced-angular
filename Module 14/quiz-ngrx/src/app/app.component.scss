@@ -1,0 +1,21 @@
+h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: red underline;
+}
+
+.answers {
+    display: flex;
+    flex-direction: column;
+}
+
+.answers div {
+    border: 1px solid gray;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;  
+    cursor: pointer;  
+}
+
+.answers div:hover {
+    background: lightgray;
+}

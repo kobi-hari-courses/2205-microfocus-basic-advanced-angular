@@ -1,6 +1,16 @@
+<div class="toolbar">
+  <button (click)="onReset()">Reset</button>
+</div>
+
+<app-quiz-done *ngIf="isQuizDone$ | async"></app-quiz-done>
+
 <div *ngIf="(currentQuestion$ | async) as question">
   <h1>{{question.caption}}</h1>
-  <div *ngFor="let answer of question.answers; let i = index">
-    {{i}}. {{answer}}
+  <div class="answers">
+    <div *ngFor="let answer of question.answers; let i = index"
+      (click)="onAnswer(i)"
+    >
+      {{i+1}}. {{answer}}
+    </div>  
   </div>
 </div>

@@ -8,10 +8,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { appReducer } from './redux/app.reducer';
 import { appFeatureKey } from './redux/app.state';
+import { QuizDoneComponent } from './components/quiz-done/quiz-done.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    QuizDoneComponent
   ],
   imports: [
     BrowserModule,
