@@ -6,14 +6,26 @@
 | [quiz-ngrx]() | Quiz app based on Redux |
 
 ### Working with immutable data
-* How to define immutable entity
-* How to derive new object from existing one
-  * Modifying object property
-  * Add item to array
-  * Change item in array
-  * Remove item from array
-* About pure functions
-* Creating helper functions for immutable types
+* How to define immutable entity?
+  * We saw that we can create immutable entities by defining an interface where each property is `readonly`
+* How to derive new object from existing one?
+  * We saw that we can use several javscript tools to help us
+  * Modifying object property using the spread operator (`...`) where we only specifiy the changed property
+  
+```javascript
+newObj = {...oldObj, prop1: newValue}
+```
+
+  * Add item to array using the spread operator on arrays, so we create a new array which contains all the elements of the original array, with the new item.
+
+```javascript
+newArray = [...oldArray, newValue];
+newArray2 = [newValue, ...oldArray];
+```
+
+  * Change item in array using either `splice` or `map`
+  * Remove item from array using either `splice` or `filter`
+* We saw how to create helper functions to make our code more readable.
 
 ### Redux and NgRx
 * We learned about the core concepts of Redux
@@ -34,6 +46,4 @@
     - We used `createFeatureSelector` to define the root selector
     - We used `createSelector` to create a selector from other more primitive selectors
 * We saw how to use a selector to create observables which we can consume in the components
-* Finally we saw how to write a service that listens to the state and enforces a logical policy on the current route
-* As a bonus, we saw how to create state slices, and reducer for each **Feature Module** and incorporate them in the global structure of our app
 

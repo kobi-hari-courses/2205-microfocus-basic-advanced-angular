@@ -52,5 +52,7 @@
 ## Advanced Modules
 * [Module 11 - Rxjs Combinators and Aggregators](Module%2011/README.md)
 * [Module 12 - Rxjs Multicating](Module%2012/README.md)
+* [Module 13 - Advanced Dependency Injection](Module%2013/README.md)
+* [Module 14 - Redux and NgRx](Module%2014/Readme.md)
 
 
