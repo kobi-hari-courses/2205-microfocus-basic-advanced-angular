@@ -2,7 +2,7 @@ import { Answer } from "../models/answer.model";
 import { Question } from "../models/question.model";
 import { AppState } from "./app.state";
 
-export function isQuizDone(state: AppState): boolean {
+export function getIsQuizDone(state: AppState): boolean {
     return state.answers.length === state.questions.length;
 }
 
