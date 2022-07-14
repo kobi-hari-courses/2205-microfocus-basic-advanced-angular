@@ -3,7 +3,7 @@
 ### Projects:
 |     |     |
 | --- | --- |
-| [quiz-ngrx]() | Quiz app based on Redux |
+| [quiz-ngrx](quiz-ngrx/) | Quiz app based on Redux |
 
 ### Working with immutable data
 * How to define immutable entity?
