@@ -6,11 +6,6 @@ import { Component, EventEmitter, Input, OnInit } from '@angular/core';
   styleUrls: ['./expander.component.css']
 })
 export class ExpanderComponent implements OnInit {
-  @Input()
-  header: string = '';
-
-  @Input()
-  content: string = '';
 
   private _isExpanded: boolean = true;
   public get isExpanded(): boolean {

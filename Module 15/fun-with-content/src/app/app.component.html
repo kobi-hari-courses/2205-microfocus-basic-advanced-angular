@@ -1,15 +1,20 @@
-<app-expander #exp1
-  header="Hello world"
->
-this is the first expander, how do you like it so far?
+<app-expander #exp1>
+  <button expander-toggle labelOn="-" labelOff="+"></button>
+  <span expander-header>Hello world</span>
+  this is the first expander, how do you like it so far?
 </app-expander>
 
 <app-expander header="Todays forecast">
+  <button expander-toggle>
+    <h1>Foo Bar</h1>
+  </button>
+  <div expander-header><img class="icon" src="assets/forecast.svg" />Todays Forecast</div>
   <p>Today is yet another very very <strong>hot</strong> day.</p>
 
   <p>
     <app-icon *ngIf="exp1.isExpanded"></app-icon>
     Expected temperatures are going to be around 40 degres celsius and the sky
-    will be partially cloudy  
+    will be partially cloudy
   </p>
 </app-expander>
+

@@ -5,3 +5,13 @@ app-expander {
 strong {
     text-decoration: red underline;
 }
+
+[expander-header] .icon {
+    height: 20px;
+}
+
+[expander-header] {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

@@ -1,0 +1,11 @@
+:host {
+    background-color: darkgray;
+    border: 0px transparent;
+    cursor: pointer;
+    min-width: 30px;
+    font-size: 0.5em;
+}
+
+:host:hover {
+    background-color: rgb(128, 128, 128);
+}
