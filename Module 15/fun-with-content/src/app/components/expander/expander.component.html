@@ -1,0 +1,16 @@
+<div class="header-area">
+    {{header}}
+</div>
+
+<div class="content-area" *ngIf="isExpanded">
+    <ng-content></ng-content>
+    <hr>
+    <ng-content></ng-content>
+</div>
+
+<div class="button-area">
+    <button (click)="toggle()">
+        <span *ngIf="isExpanded">-</span>
+        <span *ngIf="!isExpanded">+</span>
+    </button>
+</div>
