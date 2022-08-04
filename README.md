@@ -54,5 +54,6 @@
 * [Module 12 - Rxjs Multicating](Module%2012/README.md)
 * [Module 13 - Advanced Dependency Injection](Module%2013/README.md)
 * [Module 14 - Redux and NgRx](Module%2014/Readme.md)
+* [Module 15 - Content Projection](Module%2015/Readme.md)
 
 
