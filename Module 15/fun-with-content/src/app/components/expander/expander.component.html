@@ -1,4 +1,4 @@
-<div class="header-area">
+<div class="header-area" (click)="onHeaderClicked()" [class.clickable]="!toggleButtonExists">
     <ng-content select="[expander-header]"></ng-content>
 </div>
 
