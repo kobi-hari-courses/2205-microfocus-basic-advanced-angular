@@ -1,0 +1,23 @@
+ul {
+    display: flex;
+    flex-direction: column;
+}
+
+li {
+    list-style: none;
+    border: 1px solid lightgray;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 8px;
+    user-select: none;
+    cursor: pointer;
+}
+
+li:hover {
+    background: rgba(211, 211, 211, 0.5);
+}
+
+li.chosen {
+    background: rgba(144, 238, 144, 0.6);
+
+}

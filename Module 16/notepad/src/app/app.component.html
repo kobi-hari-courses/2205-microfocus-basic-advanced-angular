@@ -1,0 +1,49 @@
+<div class="title-area">
+    <app-title [caption-color]="selectedColor" caption="The amazing Notepad App"></app-title>
+</div>
+<div class="colors-area">
+    <app-string-selector
+        [options]="colors"
+        [selectedOption]="selectedColor"
+        (selectionRequested)="selectColor($event)"
+    >
+    <span *selectorItem="let caption; let chosen=selected" [style.color]="caption">
+        <ng-container *ngIf="chosen">* </ng-container>
+        {{caption}}
+    </span>
+</app-string-selector>
+</div>
+<div class="sizes-area">
+    <app-string-selector
+        [options]="sizes"
+        [selectedOption]="selectedSize"
+        (selectionRequested)="selectSize($event)"
+    >
+    <span *selectorItem="let caption; let chosen=selected" 
+            [style.font-size]="caption"
+            [style.font-weight]="chosen ? 'bold' : 'normal'"
+    
+    >{{caption}}</span>
+</app-string-selector>
+</div>
+<div class="fonts-area">
+    <app-string-selector
+        [options]="fonts"
+        [selectedOption]="selectedFont"
+        (selectionRequested)="selectFont($event)"
+    >
+    <ng-container *selectorItem="let caption; let chosen = selected">
+        <span *ngIf="chosen" [style.font-family]="caption">{{caption | uppercase}}</span>
+        <span *ngIf="!chosen" [style.font-family]="caption">{{caption}}</span>
+    </ng-container>
+</app-string-selector>
+</div>
+<div class="text-area">
+    <textarea 
+        [style.color]="selectedColor"
+        [style.font-size]="selectedSize"
+        [style.font-family]="selectedFont"
+    ></textarea>
+</div>
+
+
