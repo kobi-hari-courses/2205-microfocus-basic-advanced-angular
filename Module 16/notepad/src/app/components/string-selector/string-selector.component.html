@@ -1,0 +1,24 @@
+<ul>
+  <li
+    *ngFor="let item of options"
+    [class.chosen]="item === selectedOption"
+    (click)="onSelectOption(item)"
+  >
+  <ng-container *ngIf="itemDirective?.template">
+    <ng-container *ngTemplateOutlet="itemDirective!.template; context: {$implicit: item, selected: item === selectedOption}"></ng-container>
+  </ng-container>
+  <ng-container *ngIf="!(itemDirective?.template)">
+    {{item}}
+  </ng-container>
+</li>
+</ul>
+
+<!--  
+
+
+  1. ViewContainerRef
+      - The different types of ViewRef
+      - The api of the ViewContainerRef
+  2. ReactiveForms 
+      - ValueAccessor
+-->
