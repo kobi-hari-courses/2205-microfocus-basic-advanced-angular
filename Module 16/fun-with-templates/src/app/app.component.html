@@ -1,0 +1,48 @@
+<button (click)="toggleFlag()">Toggle Flag</button>
+
+<hr>
+
+<ng-template [myIf]="flag">
+  <h1>The flag is UP! (my directive)</h1>
+  <h2>bla bla bla</h2>
+</ng-template>
+
+<hr>
+
+<h1 *myIf="flag">The flag is UP!</h1>
+
+<hr>
+
+<h1 *ngIf="flag">The flag is UP! (classic ngIF)</h1>
+
+
+<div *ngFor="let value of values; let ind = index, let lst = last">
+  {{ind + 1}}. {{value}} (last = {{lst}})
+</div>
+
+<hr>
+
+<ng-template ngFor let-value let-ind="index" let-lst="last" [ngForOf]="values">
+  <div>
+    {{ind + 1}}. {{value}} (last = {{lst}})
+  </div>  
+</ng-template>
+
+
+
+<ng-template #fruitTemplate let-clr="color" let-fruit="fruit" let-caption>
+  <h1 [style.color]="clr">{{caption}}</h1>
+  <h2>My favorite fruit is: {{fruit}}</h2>
+</ng-template>
+
+<ng-container *ngTemplateOutlet="fruitTemplate; context:{color: 'green', fruit: 'apple', $implicit:'hello world'}">
+
+</ng-container>
+
+<hr>
+
+<ng-container *ngTemplateOutlet="fruitTemplate; context:{color: 'blue', fruit: 'orange', $implicit:'Hi Universe'}">
+
+</ng-container>
+
+
