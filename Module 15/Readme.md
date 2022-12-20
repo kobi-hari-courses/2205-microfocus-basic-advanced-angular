@@ -31,7 +31,7 @@
   * We saw that `<ng-content>`s with selector are stronger than ones without, so they get to choose first. The "non specific" `ng-content` element get to project only what is left after the specific ones have already selected their content.
 * We saw that even if the `<ng-content>` elements get destroyed (by `*ngIf` for example), the content itself does not get destroyed and is reused when a new `<ng-content>` is created
 
-### Component components
+### Compound components
 * We saw that we can create directives and components that will interact with eachother.
 * We demonstrated how to create a directive that will mark a specific part of the content
 * We saw that the directive may use dependency injection to get a reference to the parent component that received the content
